@@ -1,0 +1,165 @@
+/* Sidebar Styles */
+.sidebar {
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 20px;
+width: 93rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.content {
+  width: 73rem;
+  margin-top: 20px;
+  margin-left: 253px;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.content img {
+  width: 14rem;
+  height: 14rem;
+  object-fit: cover;
+}
+
+/* Sidebar Links */
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+  background-color: white;
+}
+
+.sidebar a:hover {
+
+  text-decoration: none;
+}
+
+a:hover {
+  color: #007bff; /* Optional: Add a hover effect for better UX */
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Dark Mode */
+:root {
+
+  --text-color: black;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  --background-color: black;
+  --text-color: white;
+}
+
+#darkModeToggle {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #222320;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Card layout */
+.cardd {
+  display: flex;
+  align-items: center; /* Fix space between items */
+  justify-content: space-between;
+}
+
+/* Button Styles */
+button {
+  text-decoration: none;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  /* Sidebar adjustments for smaller screens */
+  .sidebar {
+      position: fixed;
+      width: 250px; /* Adjust sidebar width for mobile */
+      height: 100%;
+      top: 0;
+      left: -250px; /* Initially hide sidebar */
+      padding-top: 20px;
+     
+      transition: left 0.3s ease-in-out;
+  }
+
+  /* When sidebar is open */
+  .sidebar.open {
+      left: 0;
+  }
+  .card-body{
+    width: 4rem;
+  }
+
+  .content {
+      margin-left: 0;
+      padding: 20px;
+      height: auto;
+  }
+
+  .content img {
+      width: 100%; /* Make images responsive */
+      height: auto;
+  }
+
+  /* Mobile Menu Button */
+  #menuButton {
+      display: block;
+      background-color: #222320;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      border-radius: 5px;
+  }
+
+  /* Mobile Sidebar Links */
+  .sidebar a {
+      padding: 12px;
+      text-align: center;
+  }
+
+  /* Ensure dark mode toggle button is visible and accessible */
+  #darkModeToggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+  }
+
+  .cardd img{
+    width: 7rem;
+    height: 9rem;
+    border: 1px solid black;
+  }
+
+  /* Responsive card layout */
+  .cardd {
+      display: block;
+      width: 9rem;
+      margin-top: 20px;
+  }
+
+  /* Optional: Improve readability for text on small screens */
+  .sidebar h5,
+  .content h5 {
+      font-size: 1.2rem;
+  }
+  
+}
+
